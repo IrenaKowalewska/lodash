@@ -21,6 +21,7 @@
  * // => [1, 2, 3]
  */
 function drop(array, n=1) {
+  return n < 1 ? array.slice() : array.slice(n);
 }
 
 export default drop
