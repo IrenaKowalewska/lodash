@@ -15,7 +15,7 @@
  * // => 'fRED'
  */
 const lowerFirst = (string) => {
-
+  return string.substr(0, 1).toLowerCase() + string.substr(1);
 }
 
 export default lowerFirst
