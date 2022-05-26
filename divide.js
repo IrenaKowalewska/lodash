@@ -13,6 +13,6 @@
  * // => 1.5
  */
 const divide = (dividend, divisor) => {
-
+  return dividend / divisor;
 }
 export default divide
