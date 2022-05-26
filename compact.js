@@ -12,6 +12,7 @@
  * // => [1, 2, 3]
  */
 function compact(array) {
+
 }
 
 export default compact
