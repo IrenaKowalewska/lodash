@@ -29,6 +29,11 @@
  * // => true
  */
 function eq(value, other) {
+  if(isNaN(value) && isNaN(other) && typeof value === "number" && typeof other === "number") {
+    return true;
+  }
+
+  return value === other;
 }
 
 export default eq
