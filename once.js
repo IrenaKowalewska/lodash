@@ -15,6 +15,15 @@
  * // => `createApplication` is invoked once
  */
 function once(func) {
+  let firstCall = false;
+
+  return function(...args) {
+    if (!firstCall) {
+      firstCall = true;
+      return func.apply(this, args);
+    }
+    return;
+  }
 }
 
 export default once
