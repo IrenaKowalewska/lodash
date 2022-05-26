@@ -17,6 +17,11 @@ const toString = Object.prototype.toString
  * // => { '1': 'c', '2': 'b' }
  */
 function invert(object) {
+  let result = {};
+
+  Object.entries(object).forEach(elem => result[elem[1]] =  elem[0]);
+
+  return result;
 }
 
 export default invert
