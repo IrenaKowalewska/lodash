@@ -20,6 +20,7 @@
  * // => false
  */
 function has(object, key) {
+  return object ? object.hasOwnProperty(key) : false;
 }
 
 export default has
