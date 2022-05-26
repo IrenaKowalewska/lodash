@@ -16,6 +16,17 @@
  * // => false
  */
 function cloneDeep(value) {
+  if (value === null || typeof value !== 'object' || value instanceof Date) {
+    return value
+  } else if (value instanceof Array) {
+    return value.map((elem) => cloneDeep(elem))
+  } else if (value instanceof Object) {
+    const copy = {}
+    for (const prop in value) {
+      copy[prop] = cloneDeep(value[prop])
+    }
+    return copy
+  }
 }
 
 export default cloneDeep
