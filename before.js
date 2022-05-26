@@ -14,6 +14,17 @@
  * // => Allows adding up to 4 contacts to the list.
  */
 function before(n, func) {
+  let count = 0;
+  return function (...args) {
+    if(((isNaN(n) || n === 0) && count === 0) || count < n) {
+      count++;
+      return func.apply(this, args);
+    } else {
+      if(count > n) {
+        return;
+      }
+    }
+  }
 }
 
 export default before
