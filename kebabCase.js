@@ -18,6 +18,32 @@
  * kebabCase('__FOO_BAR__')
  * // => 'foo-bar'
  */
-const kebabCase = (string) => {}
+const kebabCase = (string) => {
+  const cleanString = string.toString()
+    // Replaces any - or _ characters with a space
+    .replace( /[-_]+/g, ' ')
+    // Removes any non alphanumeric characters
+    .replace( /[^\w\s]/g, '')
+
+  if(cleanString.split(" ").length === 1) {
+    return cleanString
+      .split("")
+      .map(elem => {
+        return elem.toUpperCase() === elem ? ` ${elem.toLowerCase()}` : elem;
+      })
+      .join("")
+      .split(" ")
+      .join("-");
+  } else {
+    return cleanString
+      .toLowerCase()
+      .trim()
+      .split(" ")
+      .map((elem, i) => {
+        return elem.trim();
+      })
+      .join("-");
+  }
+}
 
 export default kebabCase
