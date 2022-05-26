@@ -18,6 +18,7 @@
  * // => false
  */
 function hasIn(object, key) {
+  return Object.keys(object).some(elem => elem === key);
 }
 
 export default hasIn
