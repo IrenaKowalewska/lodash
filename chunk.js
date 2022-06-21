@@ -17,6 +17,19 @@
  * // => [['a', 'b', 'c'], ['d']]
  */
 function chunk(array, size = 1) {
+  let result = [];
+
+  if(!size || size < 0) {
+    return size === undefined ? array : [];
+  } else {
+    const sizeInteger = Number(parseInt(size.toString()));
+
+    for (let i = 0; i < array.length; i += sizeInteger) {
+      result.push(array.slice(i, i + sizeInteger))
+    }
+  }
+
+  return result;
 }
 
 export default chunk

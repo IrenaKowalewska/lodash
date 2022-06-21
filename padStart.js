@@ -20,6 +20,20 @@
  * // => 'abc'
  */
 function padStart(string, length, chars) {
+  if(string.length >= length) {
+    return string;
+  }
+  const padLength = length - string.length;
+  let result = '';
+
+  if (!chars) {
+    result += (" ").repeat(padLength) + string;
+  } else {
+    const repeatTimes = Math.ceil(padLength / chars.length);
+    result += chars.repeat(repeatTimes).substr(0, padLength) + string;
+  }
+
+  return result;
 }
 
 export default padStart

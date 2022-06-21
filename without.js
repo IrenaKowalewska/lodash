@@ -17,6 +17,7 @@
  * // => [3]
  */
 function without(array, ...values) {
+  return array.filter(elem => !values.includes(elem));
 }
 
 export default without

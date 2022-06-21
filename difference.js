@@ -18,6 +18,9 @@
  * // => [1]
  */
 function difference(array, ...values) {
+  let arrayForComparison = [].concat(...values);
+
+  return array.filter(elem => !arrayForComparison.includes(elem));
 }
 
 export default difference

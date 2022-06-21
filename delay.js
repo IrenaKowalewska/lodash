@@ -14,6 +14,7 @@
  * // => Logs 'later' after one second.
  */
 function delay(func, wait, ...args) {
+  return setTimeout(() => func.apply(this, args), wait);
 }
 
 export default delay

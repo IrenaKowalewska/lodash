@@ -15,6 +15,26 @@
  * // => [1, 3]
  */
 function xor(...arrays) {
+  const result = []
+  const values = {}
+
+  arrays.forEach((array) => {
+    array.forEach((item) => {
+      if (values.hasOwnProperty(item)) {
+        values[item]++;
+      } else {
+        values[item] = 1;
+      }
+    })
+  })
+
+  Object.entries(values).forEach(item => {
+    if(item[1] === 1) {
+      result.push(+item[0])
+    }
+  })
+
+  return result
 }
 
 export default xor

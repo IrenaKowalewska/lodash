@@ -16,6 +16,14 @@
  * // => Logs 'done saving!' after the two async saves have completed.
  */
 function after(n, func) {
+  let count = 1;
+  return function (...args) {
+    if(count === n || isNaN(n) || n === 0) {
+      return func.apply(this, args);
+    } else {
+      count++;
+    }
+  }
 }
 
 export default after

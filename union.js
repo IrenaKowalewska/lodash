@@ -14,6 +14,8 @@
  * // => [2, 3, 1]
  */
 function union(...arrays) {
+  let array = [].concat(...arrays);
+  return [...new Set(array)];
 }
 
 export default union

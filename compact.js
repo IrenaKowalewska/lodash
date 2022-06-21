@@ -12,6 +12,7 @@
  * // => [1, 2, 3]
  */
 function compact(array) {
+  return array.filter(elem => elem);
 }
 
 export default compact
